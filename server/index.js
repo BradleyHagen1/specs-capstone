@@ -15,18 +15,19 @@ app.use(express.json());
 app.use(cors());
 
 User.hasMany(Post);
-User.hasMany(Ingredients);
+Post.belongsTo(User);
+Post.hasMany(Ingredients);
 Ingredients.belongsTo(Post);
 
 app.post("/api/register", register);
 app.post("/api/login", login);
 
-app.post("api/post", addPost);
-app.post("api/ingredients");
+app.post("/api/post", addPost);
+app.post("/api/ingredients");
 
 sequelize
   .sync()
-  //sequelize.sync({force: true})
+  // sequelize.sync({force: true})
   .then(() => {
     app.listen(SERVER_PORT, () => console.log(`server up on ${SERVER_PORT}`));
   })

@@ -22,7 +22,7 @@ module.exports = {
     },
     recipeName: DataTypes.STRING,
     notes: DataTypes.STRING,
-    imageUrl: DataTypes.TEXT,
+    imageUrl: DataTypes.TEXT
   }),
 
   Ingredients: sequelize.define("ingredients", {

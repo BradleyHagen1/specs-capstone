@@ -1,6 +1,9 @@
 import React from "react";
+import { useState } from "react";
 
-const PostCard = () => {
+const PostCard = ({post}) => {
+  const [editting, setEditting] = useState(false)
+
   return <div>PostCard</div>;
 };
 
