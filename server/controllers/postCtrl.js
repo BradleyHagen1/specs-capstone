@@ -3,7 +3,7 @@ const {Post} = require("../models/tables");
 module.exports = {
   addPost: async (req, res) => {
       try{
-          const {recipeName, notes, imageUrl, userId } = req.body;
+          const {recipeName, notes, imageUrl, userId} = req.body;
           console.log(req.body)
       console.log("addPost");
 

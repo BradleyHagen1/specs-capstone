@@ -1,7 +1,15 @@
-import React from "react";
+import {useState} from "react";
+import PostForm from "./PostForm"
 
 const AddPost = () => {
-  return <div>AddPost</div>;
+  const [post, setPost] = useState(true)
+
+
+  return (
+    <div>
+     <PostForm/>   
+    </div>
+  )
 };
 
 export default AddPost;
