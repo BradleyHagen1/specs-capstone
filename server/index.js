@@ -7,7 +7,8 @@ const { SERVER_PORT } = process.env;
 const { User, Post, Ingredients } = require("./models/tables");
 const { sequelize } = require("./util/database");
 const { register, login } = require("./controllers/authCtrl");
-const { addPost } = require("./controllers/postCtrl");
+const { addPost, getPost } = require("./controllers/postCtrl");
+const {isAuthenticated} = require("./middleware/isAuthenticated");
 
 const app = express();
 
@@ -22,8 +23,9 @@ Ingredients.belongsTo(Post);
 app.post("/api/register", register);
 app.post("/api/login", login);
 
-app.post("/api/post", addPost);
-app.post("/api/ingredients");
+app.post("/api/post", isAuthenticated, addPost);
+// app.post("/api/ingredients");
+app.get("/api/getPost/:userId", isAuthenticated, getPost);
 
 sequelize
   .sync()

@@ -8,7 +8,7 @@ function PostForm() {
   const [ recipeName, setRecipeName] = useState('')
   const [ notes, setNotes] = useState('')
   const [ imageUrl, setImageUrl] = useState('')
-  const {userId} = useContext(AuthContext)
+  const {userId, token} = useContext(AuthContext)
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
@@ -19,8 +19,13 @@ function PostForm() {
       imageUrl,
       userId
     }
-    axios.post('/api/post', body)
+    axios.post('/api/post', body, {
+      headers: {
+        Authorization: token
+      }
+    })
     .then(res => { navigate('/home')})
+    .catch(err => console.log(err))
   }
 
   return (

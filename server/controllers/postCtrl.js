@@ -20,4 +20,14 @@ module.exports = {
       res.status(500).send("Post was not added correctly.");
     }
   },
-};
+  getPost: async (req, res) => {
+    try {
+    const {userId} = req.params
+    const post = await Post.findAll({where: {userId}})
+    res.status(200).send({post})
+  } catch(err) {
+    console.log(err)
+    res.sendStatus(500)
+   }
+ },
+}
