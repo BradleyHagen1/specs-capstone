@@ -8,7 +8,7 @@ const PostCard = ({post}) => {
   return (
   <div>
     <h1>{post.recipeName}</h1>
-    <img src={post.imageUrl} alt="recipe img"/>
+    <img src={post.imageUrl} class="object-fit: contain h-72 w-96" alt="recipe img"/>
   </div>
   )
 };

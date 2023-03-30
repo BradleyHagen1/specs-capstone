@@ -22,7 +22,8 @@ const Home = () => {
 
   useEffect(getPosts, [])
   return (
-  <div>
+  <div className="flex justify-center
+        ">
     <Posts posts={posts}/>
   </div>
   )
