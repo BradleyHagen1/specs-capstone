@@ -7,14 +7,15 @@ const Header = () => {
   return (
     
       token ? (
-        <nav className="border border-black flex justify-center bg-green-800  text-white font-bold py-4 px-4 rounded-b-lg"  >
-      {/* <NavLink to='/'>Auth</NavLink> */}
-      <NavLink to='/home' className="bg-white text-black py-.5 px-2 border border-black rounded">Home</NavLink>
-      <NavLink to='/add' className="bg-white text-black py-.5 px-2 border border-black rounded">Add Post</NavLink>
-      <button onClick={() => logout()} className="bg-white text-black py-.5 px-2 border border-black rounded">Logout</button>
+        <nav className="nav"  >
+      <NavLink to='/home' className='name' >Food Place</NavLink>
+      <NavLink to='/add' className='nav-link' >Add Post</NavLink>
+      <button onClick={() => logout()} className='nav-link'>Logout</button>
       </nav>
       ) : (
-          <h2 className="flex justify-center">Welcome to food place</h2>
+        <div className="auth">
+        <h2 >Welcome to food place</h2>
+        </div>
   )
 )
 };

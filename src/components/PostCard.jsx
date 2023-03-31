@@ -6,9 +6,10 @@ const PostCard = ({post}) => {
   // const [editting, setEditting] = useState(false)
 
   return (
-  <div>
+  <div className="single-post">
+    <img src={post.imageUrl} className="img-container" alt="recipe img"/>
     <h1>{post.recipeName}</h1>
-    <img src={post.imageUrl} class="object-fit: contain h-72 w-96" alt="recipe img"/>
+    <h2>{post.notes}</h2>
   </div>
   )
 };

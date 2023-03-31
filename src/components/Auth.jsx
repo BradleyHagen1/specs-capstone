@@ -30,14 +30,16 @@ const Auth = () => {
 }
 
   return (
-  <div>
+<div className="landing">
+  <div className="auth-welcome">
     <h2>Please {register ? 'register.' : 'login.'}</h2>
     <form onSubmit={e => handleSubmit(e)}>
-      <input placeholder="username" value={username} onChange={e => setUsername(e.target.value)}/>  
-      <input placeholder="password" value={password} onChange={e => setPassword(e.target.value)}/>
-      <button>submit</button>
+      <input placeholder="username" value={username} onChange={e => setUsername(e.target.value)} className='welcome-input'/>  
+      <input placeholder="password" value={password} onChange={e => setPassword(e.target.value)} className='welcome-input'/>
+      <button className="submit-btn">Submit</button>
     </form>
-    <button onClick={() => setRegister(!register)}>Need to {register ? "login?" : "register?"}</button>
+    <button className="register" onClick={() => setRegister(!register)}>Need to {register ? "login?" : "register?"}</button>
+  </div>
   </div>
   )
   };

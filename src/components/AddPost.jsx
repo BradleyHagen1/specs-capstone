@@ -6,7 +6,7 @@ const AddPost = () => {
 
 
   return (
-    <div>
+    <div className="post-form">
      <PostForm/>   
     </div>
   )

@@ -29,12 +29,13 @@ function PostForm() {
   }
 
   return (
+    
     <form onSubmit={e => handleSubmit(e)}>
     <input placeholder='Enter recipe name' value={recipeName} onChange={e => setRecipeName(e.target.value)} />
     <input placeholder='Enter notes here' value={notes} onChange={e => setNotes(e.target.value)} />
     <input placeholder='Enter image Url here' value={imageUrl} onChange={e => setImageUrl(e.target.value)} />
     {/* <input placeholder='Enter recipe name' value={recipeName} onChange={e => setRecipeName(e.target.value)} /> */}
-    <button>Submit</button>
+    <button className='submit-button'>Submit</button>
     </form>
   )
 }
