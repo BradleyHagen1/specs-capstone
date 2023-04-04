@@ -8,13 +8,13 @@ const Header = () => {
     
       token ? (
         <nav className="nav"  >
-      <NavLink to='/home' className='name' >Food Place</NavLink>
+      <NavLink to='/home' className='name' >A Cooks Book</NavLink>
       <NavLink to='/add' className='nav-link' >Add Post</NavLink>
       <button onClick={() => logout()} className='nav-link'>Logout</button>
       </nav>
       ) : (
         <div className="auth">
-        <h2 >Welcome to food place</h2>
+        <h2 >Welcome to A Cooks Book</h2>
         </div>
   )
 )

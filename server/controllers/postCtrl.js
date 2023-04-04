@@ -20,6 +20,7 @@ module.exports = {
       res.status(500).send("Post was not added correctly.");
     }
   },
+
   getPost: async (req, res) => {
     try {
     const {userId} = req.params
@@ -30,4 +31,16 @@ module.exports = {
     res.sendStatus(500)
    }
  },
-}
+
+ deletePost: async( req, res) => {
+  try {
+     const {id} = req.params
+      await Post.destroy({where: {id}})
+    res.sendStatus(200)
+
+  } catch(err) {
+    console.log(err)
+    res.status(400).send("unable to delete post")
+  }
+ }
+};

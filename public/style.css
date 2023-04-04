@@ -174,7 +174,7 @@ select {
   font-size: larger;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
-  background-color: lightblue;
+  background-color: #edc6c3;
   font-weight: 500;
 }
 
@@ -190,7 +190,7 @@ select {
 }
 
 body {
-  background-color: lightgoldenrodyellow;
+  background-color: #CFD3C5;
 }
 
 .img-container {
@@ -215,13 +215,23 @@ body {
   align-items: center;
   justify-content: space-around;
   padding-top: 15px;
+  height: 30vh;
+}
+
+.post-form form{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border: #000 solid 1px;
 }
 
 form {
   display: flex;
   flex-direction: column;
   padding: 10px;
-  margin: 10px;
+  margin-top: 10px;
   /* border: #000 solid 1px; */
 }
 
@@ -245,6 +255,15 @@ input {
   padding-left: 3px;
   padding-right: 3px;
 }
+
+.deleteBtn {
+    border: #000 solid 1px;
+    border-radius: 6px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background-color: lightgray;
+    margin-top: 10px;
+}
                           /* Auth */
 
 .landing {
@@ -257,16 +276,29 @@ input {
 
 }
 
+.auth {
+    padding-top: 15px;
+    /* height: 200px; */
+    background-color: #edc6c3;
+}
+
 .auth h2 {
     text-align: center;
     font-size: larger;
     font-weight: 600;
-    margin-top: 15px;
+    /* margin-top: 15px; */
     border: #000 solid 2px;
     border-top: 5px;
     border-left: 5px;
     border-right: 5px;
-    
+}
+
+.auth-welcome form {
+    height: 20vh;
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 .welcome-input {

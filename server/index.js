@@ -7,7 +7,8 @@ const { SERVER_PORT } = process.env;
 const { User, Post, Ingredients } = require("./models/tables");
 const { sequelize } = require("./util/database");
 const { register, login } = require("./controllers/authCtrl");
-const { addPost, getPost } = require("./controllers/postCtrl");
+const { addPost, getPost, deletePost } = require("./controllers/postCtrl");
+// const { deletePost } = require("./controllers/postCtrl") 
 const {isAuthenticated} = require("./middleware/isAuthenticated");
 
 const app = express();
@@ -27,6 +28,8 @@ app.post("/api/post", isAuthenticated, addPost);
 // app.post("/api/ingredients");
 app.get("/api/getPost/:userId", isAuthenticated, getPost);
 
+app.delete("/api/post/:id", isAuthenticated, deletePost);
+
 sequelize
   .sync()
   // sequelize.sync({force: true})
@@ -35,4 +38,4 @@ sequelize
   })
   .catch((err) => console.log(err));
 
-//ask about the hasMany being correct
+
